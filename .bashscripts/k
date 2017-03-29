@@ -1,0 +1,4 @@
+#! /bin/bash
+echo "killing job :$1"
+p="%$1"
+kill -9  "$p"

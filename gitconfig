@@ -1,0 +1,26 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = Jon Ashdown
+	email = jon.ashdown@bbc.co.uk
+[http]
+[branch]
+	autosetuprebase = always
+[push]
+	default = current
+[alias]
+  newbranch = "!f() { git checkout -b $1 origin/master; git branch --set-upstream $1 origin/master; }; f"
+  newleaf = "!f() { git checkout -b $1 origin/develop; git branch --set-upstream $1 origin/develop; }; f"
+  bug = "!f() { git branch bug/$1; git push -u origin bug/$1; git checkout bug/$1; }; f"
+	feature  = "!f() { git branch feature/$1; git push -u origin feature/$1; git checkout feature/$1; }; f"
+	refactor  = "!f() { git branch refactor/$1; git push -u origin refactor/$1; git checkout refactor/$1; }; f"
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[core]
+	autocrlf = input
+[color]
+	ui = auto
+[url "https://github.com/"]
+	insteadOf = git://github.com/

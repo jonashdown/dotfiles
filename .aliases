@@ -1,0 +1,55 @@
+alias reload='source ~/.bashrc;clear'
+alias cw="cd $current_project_dir"
+alias pw="echo $current_project"
+alias ep="cd $HOME;reload"
+alias profile='nano ~/.profile;reload'
+alias j='jobs'
+alias k='kill -9'
+alias scratch='cd /tmp'
+alias workspace='cd $WORKSPACE'
+alias proxyvars="env | grep -i reith | sed -e 's/=/ /g' | awk '{print $1}'"
+alias unsetproxy='for f in `proxyvars`;do unset $f;done'
+
+alias branch='git branch'
+alias push='git push'
+alias rebase='pull;npm install;bower update;gulp'
+alias fpush='git push --force'
+alias merge='git merge'
+alias cr='git rebase --continue'
+alias ca='git rebase --abort'
+alias checkout='git checkout'
+alias co='git checkout'
+alias fetch='git fetch'
+alias status='git status'
+alias newbranch='git newbranch'
+alias newleaf='git newleaf'
+alias nb='newbranch'
+alias update='pull;npm install && bower update'
+alias master='co master;pull;npm install && bower update'
+alias bug='git bug'
+alias feature='git feature'
+alias refactor='git refactor'
+alias currentbranch='git rev-parse --abbrev-ref HEAD'
+alias cb='git rev-parse --abbrev-ref HEAD'
+
+alias gus='gulp serve'
+alias gub='build.sh'
+alias gut='gulp test'
+alias gunit='gulp unit'
+alias accept='gulp acceptance'
+alias guc='gulp compile'
+alias ghint='gulp jshint'
+alias watch='gulp watch'
+alias lint='gulp lint'
+
+alias dockerenv='eval $(docker-machine env default)'
+alias dockerip='docker-machine ip default'
+alias dockerstart='docker-machine start default && dockerenv && dockerip'
+alias killtests='(killall java || true)  && (killall node || true) && (pkill chromedriver || true)'
+
+for f in `ls $HOME/workspace`
+do
+	alias $f="cd $HOME/workspace/$f;if [ -f .nvmrc ]; then nvm use; fi"
+done
+
+alias projects="ls $HOME/workspace"
