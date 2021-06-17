@@ -1,25 +1,5 @@
-export PATH=$PATH:/Users/ashdoj02/activator-1.2.6-minimal:/Users/ashdoj02/.bashscripts
+export PATH=$PATH:/Users/ashdoj02/activator-1.2.6-minimal:/Users/jonashdown/.bashscripts
 export WORKSPACE=$HOME/workspace
-
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA_OPTS="\
-        -DsocksProxyHost= \
-        -Djavax.net.ssl.trustStore=$HOME/.certs/jssecacerts \
-        -Djavax.net.ssl.trustStorePassword=changeit \
-        -Djavax.net.ssl.keyStore=$HOME/.certs/jon.ashdown.dev.p12 \
-        -Djavax.net.ssl.keyStorePassword=astrak363gyg,RED \
-        -Djavax.net.ssl.keyStoreType=PKCS12 \
-        -Djsse.enableSNIExtension=false \
-        -Djava.net.useSystemProxies=true \
-"
-
-export SBT_OPTS=$JAVA_OPTS" -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
-#export http_proxy=http://www-cache.reith.bbc.co.uk:80
-#export https_proxy=http://www-cache.reith.bbc.co.uk:80
-#export HTTP_PROXY=http://www-cache.reith.bbc.co.uk:80
-#export HTTPS_PROXY=http://www-cache.reith.bbc.co.uk:80
-#export npm_config_proxy="http://www-cache.reith.bbc.co.uk:80"
-#export npm_config_https_proxy="http://www-cache.reith.bbc.co.uk:80"
 
 source ~/.git-prompt
 
@@ -128,13 +108,12 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-
+source ~/.tokens
 source ~/.profile
 source ~/.aliases
 
 trap_exit (){
 	cw
-	sandboxdown
 }
 
 trap trap_exit EXIT
@@ -143,3 +122,10 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="/Users/ashdoj02/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+HISTIGNORE="$HISTIGNORE:jrnl *"
+
+complete -C /usr/local/bin/terraform terraform
+
+export COLUMNS="120"
+
+export PATH="$PATH:/Users/jonashdown/ACLI"
