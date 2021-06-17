@@ -1,0 +1,34 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = Jon Ashdown
+	email = jonashdown@users.noreply.github.com
+	signingkey = 89BDFFABBB22F6C3
+[http]
+[branch]
+	autosetuprebase = always
+[push]
+	default = current
+[alias]
+  newbranch = "!f() { git checkout -b $1 origin/master; git branch --set-upstream-to origin/master; }; f"
+  nb = "!f() { git checkout -b $1 origin/main; git branch --set-upstream-to origin/main; }; f"
+  newleaf = "!f() { git checkout -b $1 origin/develop; git branch --set-upstream $1 origin/develop; }; f"
+  bug = "!f() { git branch bug/$1; git push -u origin bug/$1; git checkout bug/$1; }; f"
+	feature  = "!f() { git branch feature/$1; git push -u origin feature/$1; git checkout feature/$1; }; f"
+	refactor  = "!f() { git branch refactor/$1; git push -u origin refactor/$1; git checkout refactor/$1; }; f"
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[core]
+	autocrlf = input
+	excludesfile = /Users/jonashdown/.gitignore_global
+	hooksPath = /Users/jonashdown/workspace/githooks
+[color]
+	ui = auto
+#[url "https://github.com/"]
+#	insteadOf = git://github.com/
+[commit]
+        gpgsign = true
+[tag]
+	forceSignAnnotated = true
