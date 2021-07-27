@@ -5,9 +5,6 @@ export GITHUB_EMAIL=$(git config --get user.email)
 export NPM_USER=$GITHUB_USER
 export NPM_PASS=$GITHUB_TOKEN
 export NPM_EMAIL=$GITHUB_EMAIL
-export NPM_REGISTRY=https://npm.pkg.github.com
-export NPM_SCOPE=@wakelet
-export AZURE_DEVOPS_PAT=b7ubsqb7k24tqxiqevwc33xmkzajmqfy2bi46johsombgwcdkxdq
 
 ulimit -n 1024
 
@@ -24,4 +21,3 @@ export NVM_DIR="$HOME/.nvm"
 
 export COLUMNS="120"
 
-export PATH="$PATH:/Users/jonashdown/ACLI"

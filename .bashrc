@@ -1,4 +1,4 @@
-export PATH=$PATH:/Users/ashdoj02/activator-1.2.6-minimal:/Users/jonashdown/.bashscripts
+export PATH=$PATH:$HOME/.bashscripts
 export WORKSPACE=$HOME/workspace
 
 source ~/.git-prompt
@@ -108,8 +108,10 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-source ~/.tokens
+#source ~/.tokens
 source ~/.profile
+
+alias reload='source ~/.bashrc;clear'
 source ~/.aliases
 
 trap_exit (){
@@ -128,4 +130,3 @@ complete -C /usr/local/bin/terraform terraform
 
 export COLUMNS="120"
 
-export PATH="$PATH:/Users/jonashdown/ACLI"
