@@ -1,0 +1,12 @@
+.aliases
+.bash_profile
+.bashrc
+.gemrc
+.git-prompt
+.gitconfig
+.gitignore_global
+.iterm2_shell_integration.bash
+.p10k.zsh
+.profile
+.vimrc
+.zshrc
