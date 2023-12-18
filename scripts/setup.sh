@@ -15,6 +15,7 @@ brew install iterm2
 brew install neo4j
 brew install slack
 brew install visual-studio-code
+brew install obsidian
 
 ### Formulae
 brew install act
@@ -92,7 +93,7 @@ brew install pcre
 brew install pcre2
 brew install pixman
 brew install pkg-config
-brew install python@3.9
+brew install python@3.11
 brew install readline
 brew install shared-mime-info
 brew install sqlite
@@ -103,10 +104,12 @@ brew install xmlto
 brew install xorgproto
 brew install xz
 brew install zsh
+brew install powerlevel10k
+brew install jrnl
 
 ## Node
 
-for f in [12,14,16]
+for f in [16,18,20]
   
   do
     nvm install $f
@@ -115,13 +118,6 @@ for f in [12,14,16]
     npm install -g cdk mocha esbuild eslint npm-cli-login
   done
 
-
-## AWS
-curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg ./AWSCLIV2.pkg -target /
-rm -f AWSCLIV2.pkg
-
-
 ## Workspace
 mkdir $HOME/Workspace
 cd $HOME/Workspace
@@ -129,7 +125,8 @@ cd $HOME/Workspace
 git clone git@github.com:jonashdown/dotfiles.git
 git clone git@github.com:jonashdown/jonashdown.git
 git clone git@github.com:jonashdown/journals.git
-git clone git@github.com:jonashdown/awsutils.git
+git clone git@github.com:jonashdown/Blog.git
+git clone git@github.com/jonashdown/Knowledgebase.git
 
 cd dotfiles
 for f in `cat dotfiles.txt`
