@@ -93,7 +93,7 @@ brew install pcre
 brew install pcre2
 brew install pixman
 brew install pkg-config
-brew install python@3.11
+brew install python@3.16
 brew install readline
 brew install shared-mime-info
 brew install sqlite
@@ -109,13 +109,14 @@ brew install jrnl
 
 ## Node
 
-for f in [16,18,20]
+for f in [18,20, 22, 24]
   
   do
     nvm install $f
     nvm use $f
     npm install -g npm
-    npm install -g cdk mocha esbuild eslint npm-cli-login
+    npm install -g pnpm
+    pnpm install -g cdk mocha esbuild eslint npm-cli-login jest
   done
 
 ## Workspace
