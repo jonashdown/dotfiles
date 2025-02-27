@@ -119,6 +119,11 @@ for f in [18,20, 22, 24]
     pnpm install -g cdk mocha esbuild eslint npm-cli-login jest
   done
 
+## Github
+gh auth login
+gh ssh-key add $HOME/.ssh/id_ed25519.pub --type authentication --title "main key for $(uname -n)"
+gh ssh-key add $HOME/.ssh/id_ed25519_githu.pub --type authentication --title "github key for $(uname -n)"
+
 ## Workspace
 mkdir $HOME/Workspace
 cd $HOME/Workspace
