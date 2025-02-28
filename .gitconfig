@@ -2,8 +2,8 @@
 	helper = osxkeychain
 [user]
 	name = Jon Ashdown
-	email = jonashdown@users.noreply.github.com
-	signingkey = 89BDFFABBB22F6C3
+	email = 5682241+jonashdown@users.noreply.github.com
+	signingkey = F5D5EA6C5AE96C4E
 [http]
 [branch]
 	autosetuprebase = always
